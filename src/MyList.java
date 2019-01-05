@@ -1,5 +1,5 @@
-//E is a Object!
-public interface List<T>
+//T is an Object!
+public interface MyList<T>
 {
     public int size();
 

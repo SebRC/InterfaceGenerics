@@ -1,16 +1,15 @@
 
 
-public class LinkedList<T> implements List<T>
+public class MyLinkedList<T> implements MyList<T>
 {
-    private ListNode<T> front;  // first value in the list
+    // first value in the list
+    private MyListNode<T> front;
 
     //constructs an empty list
-    public LinkedList()
+    public MyLinkedList()
     {
         front = null;
     }
-
-
 
     public int size()
     {
@@ -22,7 +21,7 @@ public class LinkedList<T> implements List<T>
             return size;
         }
 
-        ListNode current = front;
+        MyListNode current = front;
 
         //counts every node
         while (current != null)
@@ -43,7 +42,7 @@ public class LinkedList<T> implements List<T>
         }
 
         T value = null;
-        ListNode<T> current = front;
+        MyListNode<T> current = front;
 
         for (int i = 0; i <= index; i++)
         {
@@ -66,7 +65,7 @@ public class LinkedList<T> implements List<T>
         else
         {
             String result = "[" + front.data;
-            ListNode<T> current = front.next;
+            MyListNode<T> current = front.next;
 
             while (current != null)
             {
@@ -85,17 +84,17 @@ public class LinkedList<T> implements List<T>
     {
         if (front == null)
         {
-            front = new ListNode<T>(value);
+            front = new MyListNode<T>(value);
         }
         else
         {
-            ListNode current = front;
+            MyListNode current = front;
 
             while (current.next != null)
             {
                 current = current.next;
             }
-            current.next = new ListNode<T>(value);
+            current.next = new MyListNode<T>(value);
         }
     }
 
@@ -104,11 +103,11 @@ public class LinkedList<T> implements List<T>
     {
         if (front == null)
         {
-            front = new ListNode<T>(value);
+            front = new MyListNode<T>(value);
         }
         else
         {
-            ListNode<T> current = front;
+            MyListNode<T> current = front;
             T copyValue = null;
 
             for (int i = 0; i <= size(); i++)
@@ -122,7 +121,7 @@ public class LinkedList<T> implements List<T>
                 }
                 if (current.next == null)
                 {
-                    current.next = new ListNode(value);
+                    current.next = new MyListNode(value);
                     break;
                 }
                 current = current.next;
@@ -130,10 +129,10 @@ public class LinkedList<T> implements List<T>
         }
     }
 
-    //remove specific node and move every node right of index 1 space to the left
+    //remove specific node and move every node past of index 1 space to the left
     public void remove(int index)
     {
-        ListNode current = front;
+        MyListNode current = front;
         Object copyValue;
 
         for (int i = 0; i <= size(); i++)
@@ -152,5 +151,6 @@ public class LinkedList<T> implements List<T>
         }
     }
 
-
 }
+
+

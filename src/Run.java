@@ -2,7 +2,7 @@ public class Run
 {
     public static void main(String[] args)
     {
-        LinkedList<String> stringLinkedList = new LinkedList<>();
+        MyLinkedList<String> stringLinkedList = new MyLinkedList<>();
 
         stringLinkedList.add("Seb");
         stringLinkedList.add("Mathias");
